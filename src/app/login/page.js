@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import Logo from "../components/logo/logo";
 
 const auth = () => {
 	const [username, setUsername] = useState("");
@@ -10,18 +11,19 @@ const auth = () => {
 	const router = useRouter();
 
 	const handleLogin = (e) => {
-    e.preventDefault();
+		e.preventDefault();
 
 		// TODO (next-auth)
 		if (username === "admin" && password === "admin") {
 			router.push("/dashboard");
 		} else {
-      window.alert('Wrong credentials!');
-    }
+			window.alert("Wrong credentials!");
+		}
 	};
 
 	return (
 		<div className={styles.auth}>
+			<Logo />
 			<h2 className={styles.auth__title}>Login</h2>
 			<form className={styles.auth__form} onSubmit={handleLogin}>
 				<div className={styles.auth__inputGroup}>
