@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1234567890",
+      "status": "veteran",
+      "age": 35,
+      "location": "City A"
+    },
+    {
+      "id": "9876543210",
+      "status": "family",
+      "age": 42,
+      "location": "City B"
+    },
+    {
+      "id": "5555555555",
+      "status": "veteran",
+      "age": 28,
+      "location": "City C"
+    },
+    {
+      "id": "1111111111",
+      "status": "family",
+      "age": 50,
+      "location": "City A"
+    },
+    {
+      "id": "9999999999",
+      "status": "veteran",
+      "age": 38,
+      "location": "City B"
+    },
+    {
+      "id": "7777777777",
+      "status": "family",
+      "age": 34,
+      "location": "City C"
+    }
+  ]
+}
