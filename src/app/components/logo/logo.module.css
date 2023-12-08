@@ -1,0 +1,13 @@
+.logo {
+  position: absolute;
+  background-color: #132C49;
+  top: 1em;
+  left: 1em;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.logo__img {
+  width: 10em;
+  height: 5em;
+}
