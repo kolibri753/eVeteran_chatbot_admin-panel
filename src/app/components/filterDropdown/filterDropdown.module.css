@@ -1,0 +1,22 @@
+.filterDropdown {
+	display: flex;
+	align-items: center;
+}
+
+.filterDropdown__label {
+	font-size: 1em;
+	margin-right: 2em;
+}
+
+.filterDropdown__select {
+	margin-left: 3em;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	scale: 1.5;
+}
+
+.filterDropdown__option {
+  font-size: 1.5em;
+}
