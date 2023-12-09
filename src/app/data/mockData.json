@@ -12,6 +12,26 @@
     },
     {
       "id": "+380969334555",
+      "name": "Orest Havalo",
+      "sex": "male",
+      "age": 25,
+      "location": "Ukraine",
+      "status": "veteran",
+      "messenger": "Telegram",
+      "timestamp": "2023-12-09T10:45:20Z"
+    },
+    {
+      "id": "+380962494332",
+      "name": "Victor Strand",
+      "sex": "male",
+      "age": 30,
+      "location": "New York",
+      "status": "veteran",
+      "messenger": "Viber",
+      "timestamp": "2023-12-09T12:34:56Z"
+    },
+    {
+      "id": "+380969334555",
       "name": "Jane Doe",
       "sex": "female",
       "age": 25,

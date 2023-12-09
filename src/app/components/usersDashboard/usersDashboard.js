@@ -1,19 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FilterDropdown from "../filterDropdown/filterDropdown";
 import Table from "../table/table";
+import DoughnutChart from "../doughnutChart/doughnutChart";
 import { exportToCSV } from "../../utils/exportUtils";
 import { isInSelectedPeriod } from "../../utils/dateUtils";
 import styles from "./usersDashboard.module.css";
-import { Doughnut } from "react-chartjs-2";
-import { Chart, registerables } from "chart.js";
-Chart.register(...registerables);
 
 import data from "../../data/mockData.json";
 
 const UsersDashboard = ({ filterParams }) => {
-	const [selectedPeriod, setSelectedPeriod] = useState("3 month");
+	const [selectedPeriod, setSelectedPeriod] = useState("7 days");
+  const [filteredData, setFilteredData] = useState([]);
 
 	const periodOptions = [
 		{ value: "7 days", label: "Last 7 days" },
@@ -36,59 +35,48 @@ const UsersDashboard = ({ filterParams }) => {
 		{ key: "timestamp", label: "Мітка часу" },
 	];
 
-	const filteredData = data.users.filter((user) => {
-		if (filterParams === "all") {
-			return isInSelectedPeriod(user.timestamp, selectedPeriod);
-		}
-
-		if (filterParams !== null) {
-			const [status, sex] = filterParams.split(" ");
-
-			if (status && sex) {
-				if (status === "all") {
-					return (
-						user.sex === sex && isInSelectedPeriod(user.timestamp, selectedPeriod)
-					);
+	useEffect(() => {
+		const computeFilteredData = () => {
+			const newData = data.users.filter((user) => {
+				if (filterParams === "all") {
+					return isInSelectedPeriod(user.timestamp, selectedPeriod);
 				}
 
-				return (
-					user.status === status &&
-					user.sex === sex &&
-					isInSelectedPeriod(user.timestamp, selectedPeriod)
-				);
-			} else {
-				return (
-					user.status === filterParams &&
-					isInSelectedPeriod(user.timestamp, selectedPeriod)
-				);
-			}
-		}
+				if (filterParams !== null) {
+					const [status, sex] = filterParams.split(" ");
 
-		return false;
-	});
+					if (status && sex) {
+						if (status === "all") {
+							return (
+								user.sex === sex && isInSelectedPeriod(user.timestamp, selectedPeriod)
+							);
+						}
+
+						return (
+							user.status === status &&
+							user.sex === sex &&
+							isInSelectedPeriod(user.timestamp, selectedPeriod)
+						);
+					} else {
+						return (
+							user.status === filterParams &&
+							isInSelectedPeriod(user.timestamp, selectedPeriod)
+						);
+					}
+				}
+
+				return false;
+			});
+
+			setFilteredData(newData);
+		};
+
+		computeFilteredData();
+	}, [filterParams, selectedPeriod]);
 
 	const handleExportToCSV = () => {
 		exportToCSV(filteredData);
 	};
-
-	const maleCount = filteredData.filter((user) => user.sex === "male").length;
-	const femaleCount = filteredData.filter(
-		(user) => user.sex === "female"
-	).length;
-	const totalUsers = maleCount + femaleCount;
-
-	const doughnutData = {
-		labels: ["Male", "Female"],
-		datasets: [
-			{
-				data: [maleCount, femaleCount],
-				backgroundColor: ["blue", "yellow"],
-				hoverOffset: 4,
-			},
-		],
-	};
-
-	Chart.defaults.font.size = 20;
 
 	return (
 		<section className={styles.dashboard}>
@@ -98,10 +86,7 @@ const UsersDashboard = ({ filterParams }) => {
 				options={periodOptions}
 			/>
 			<Table columns={columns} data={filteredData} />
-			<div className={styles.chart}>
-				<Doughnut data={doughnutData} />
-				<span className={styles.chart__center}>{totalUsers}</span>
-			</div>
+			<DoughnutChart data={filteredData} />
 			<button className={styles.csvBtn} onClick={handleExportToCSV}>
 				Експорт (CVS)
 			</button>
