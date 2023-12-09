@@ -1,40 +1,84 @@
 {
   "users": [
     {
-      "id": "1234567890",
-      "status": "veteran",
-      "age": 35,
-      "location": "City A"
-    },
-    {
-      "id": "9876543210",
+      "id": "+380962494332",
+      "name": "John Doe",
+      "sex": "male",
+      "age": 30,
+      "location": "New York",
       "status": "family",
-      "age": 42,
-      "location": "City B"
+      "messenger": "Viber",
+      "timestamp": "2023-01-01T12:34:56Z"
     },
     {
-      "id": "5555555555",
+      "id": "+380969334555",
+      "name": "Jane Doe",
+      "sex": "female",
+      "age": 25,
+      "location": "Los Angeles",
       "status": "veteran",
+      "messenger": "Telegram",
+      "timestamp": "2023-01-02T10:45:30Z"
+    },
+    {
+      "id": "+380672345430",
+      "name": "Bob Smith",
+      "sex": "male",
+      "age": 40,
+      "location": "Ukraine",
+      "status": "family",
+      "messenger": "Facebook Messenger",
+      "timestamp": "2023-01-03T08:15:20Z"
+    },
+    {
+      "id": "+380672441231",
+      "name": "Alice Johnson",
+      "sex": "female",
       "age": 28,
-      "location": "City C"
-    },
-    {
-      "id": "1111111111",
-      "status": "family",
-      "age": 50,
-      "location": "City A"
-    },
-    {
-      "id": "9999999999",
+      "location": "San Francisco",
       "status": "veteran",
-      "age": 38,
-      "location": "City B"
+      "messenger": "Telegram",
+      "timestamp": "2023-01-04T15:22:10Z"
     },
     {
-      "id": "7777777777",
+      "id": "+380672341224",
+      "name": "Michael Williams",
+      "sex": "male",
+      "age": 35,
+      "location": "Ukraine",
+      "status": "veteran",
+      "messenger": "Telegram",
+      "timestamp": "2023-01-05T18:50:45Z"
+    },
+    {
+      "id": "+380672341126",
+      "name": "Emily Davis",
+      "sex": "female",
+      "age": 32,
+      "location": "Miami",
       "status": "family",
-      "age": 34,
-      "location": "City C"
+      "messenger": "Telegram",
+      "timestamp": "2023-01-06T14:12:30Z"
+    },
+    {
+      "id": "+380672341298",
+      "name": "David Lee",
+      "sex": "male",
+      "age": 45,
+      "location": "Ukraine",
+      "status": "veteran",
+      "messenger": "Telegram",
+      "timestamp": "2023-01-07T09:28:15Z"
+    },
+    {
+      "id": "+380672341239",
+      "name": "Sophia Rodriguez",
+      "sex": "female",
+      "age": 22,
+      "location": "Ukraine",
+      "status": "veteran",
+      "messenger": "Viber",
+      "timestamp": "2023-01-08T22:14:05Z"
     }
   ]
 }

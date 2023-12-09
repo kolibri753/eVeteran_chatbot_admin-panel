@@ -1,0 +1,18 @@
+.dashboard {
+  padding: 1em 2em;
+}
+
+.csvBtn {
+  font-size: 1.4em;
+  padding: 0.3em;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.csvBtn:hover {
+  transform: scale(1.1);
+}

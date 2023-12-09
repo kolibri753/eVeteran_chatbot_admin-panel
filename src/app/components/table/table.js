@@ -6,15 +6,19 @@ const Table = ({ columns, data }) => (
     <thead>
       <tr>
         {columns.map((column) => (
-          <th key={column.key}>{column.label}</th>
+          <th key={column.key} className={styles.table__header}>
+            {column.label}
+          </th>
         ))}
       </tr>
     </thead>
     <tbody>
       {data.map((row) => (
-        <tr key={row.id}>
+        <tr key={row.id} className={styles.table__row}>
           {columns.map((column) => (
-            <td key={column.key}>{row[column.key]}</td>
+            <td key={column.key} className={styles.table__cell}>
+              {row[column.key]}
+            </td>
           ))}
         </tr>
       ))}
