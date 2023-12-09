@@ -7,7 +7,7 @@ const Home = () => {
 		<div className={styles.container}>
 			<Logo />
 			<h1 className={styles.title}>
-				Вітаємо у адміністративній панелі для чат-бота "е-Ветеран"!
+				Вітаємо у адміністративній панелі для чат-бота &quot;е-Ветеран&quot;!
 			</h1>
 			<p className={styles.description}>
 				Тут ви матимете повний контроль над інтерфейсом та аналітикою. Слідкуйте за
