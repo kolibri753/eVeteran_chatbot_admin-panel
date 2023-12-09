@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# e-Veteran Admin Panel
+
+Welcome to the e-Veteran Admin Panel, a platform that provides full control over the interface and analytics for the e-Veteran chatbot.
 
 ## Getting Started
 
-First, run the development server:
+1. Visit the deployed admin panel (demo): [Netlify Admin Panel Link](your-netlify-link)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Log in using the provided credentials.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   - Username: `admin`
+   - Password: `admin`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Explore the various features and analytics tools available in the admin panel.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### TELEGRAM BOT
+https://t.me/AVVAO_hackathon_bot 
+![telegram-bot](https://github.com/kolibri753/eVeteran_chatbot_admin-panel/assets/89083538/b753624f-4643-49ad-aaac-983e0e4ee0d6)
 
-## Learn More
+### Dashboard - Home Page
+![dashboard-homepage](https://github.com/kolibri753/eVeteran_chatbot_admin-panel/assets/89083538/5d8c70fe-1be5-4a83-96f6-601828cfde3a)
 
-To learn more about Next.js, take a look at the following resources:
+### SOLUTION ARCHITECTURE - CONTEXT
+![solution-arch-context](https://github.com/kolibri753/eVeteran_chatbot_admin-panel/assets/89083538/9dcf4e03-3e01-4a3d-8835-093c0a2bdd55)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### SOLUTION ARCHITECTURE - COMPONENT
+![solution-arch-comnonent-context](https://github.com/kolibri753/eVeteran_chatbot_admin-panel/assets/89083538/7d49795f-6a82-4aae-a134-292e16f3085e)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
