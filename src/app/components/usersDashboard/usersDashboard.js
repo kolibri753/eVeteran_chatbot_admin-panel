@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FilterDropdown from "../filterDropdown/filterDropdown";
 import Table from "../table/table";
 import DoughnutChart from "../doughnutChart/doughnutChart";
@@ -12,7 +12,6 @@ import data from "../../data/mockData.json";
 
 const UsersDashboard = ({ filterParams }) => {
 	const [selectedPeriod, setSelectedPeriod] = useState("7 days");
-  const [filteredData, setFilteredData] = useState([]);
 
 	const periodOptions = [
 		{ value: "7 days", label: "Last 7 days" },
@@ -35,44 +34,35 @@ const UsersDashboard = ({ filterParams }) => {
 		{ key: "timestamp", label: "Мітка часу" },
 	];
 
-	useEffect(() => {
-		const computeFilteredData = () => {
-			const newData = data.users.filter((user) => {
-				if (filterParams === "all") {
-					return isInSelectedPeriod(user.timestamp, selectedPeriod);
-				}
+	const filteredData = data.users.filter((user) => {
+		if (filterParams === "all") {
+			return isInSelectedPeriod(user.timestamp, selectedPeriod);
+		}
 
-				if (filterParams !== null) {
-					const [status, sex] = filterParams.split(" ");
+		if (filterParams !== null) {
+			const [status, sex] = filterParams.split(" ");
 
-					if (status && sex) {
-						if (status === "all") {
-							return (
-								user.sex === sex && isInSelectedPeriod(user.timestamp, selectedPeriod)
-							);
-						}
+			if (status === "all") {
+				return (
+					(sex === "all" || user.sex === sex) &&
+					isInSelectedPeriod(user.timestamp, selectedPeriod)
+				);
+			} else if (sex) {
+				return (
+					user.status === status &&
+					(sex === "all" || user.sex === sex) &&
+					isInSelectedPeriod(user.timestamp, selectedPeriod)
+				);
+			} else {
+				return (
+					user.status === filterParams &&
+					isInSelectedPeriod(user.timestamp, selectedPeriod)
+				);
+			}
+		}
 
-						return (
-							user.status === status &&
-							user.sex === sex &&
-							isInSelectedPeriod(user.timestamp, selectedPeriod)
-						);
-					} else {
-						return (
-							user.status === filterParams &&
-							isInSelectedPeriod(user.timestamp, selectedPeriod)
-						);
-					}
-				}
-
-				return false;
-			});
-
-			setFilteredData(newData);
-		};
-
-		computeFilteredData();
-	}, [filterParams, selectedPeriod]);
+		return false;
+	});
 
 	const handleExportToCSV = () => {
 		exportToCSV(filteredData);
