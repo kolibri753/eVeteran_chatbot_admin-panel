@@ -4,7 +4,7 @@ Welcome to the e-Veteran Admin Panel, a platform that provides full control over
 
 ## Getting Started
 
-1. Visit the deployed admin panel (demo): [Netlify Admin Panel Link](your-netlify-link)
+1. Visit the deployed admin panel (demo): [Netlify Admin Panel Link](https://eveteran-admin-panel-team14.netlify.app/)
 
 2. Log in using the provided credentials.
 
