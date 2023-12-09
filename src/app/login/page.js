@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import Logo from "../components/logo/logo";
 
-const auth = () => {
+const Login = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const router = useRouter();
@@ -51,11 +51,11 @@ const auth = () => {
 					/>
 				</div>
 				<button type="submit" className={styles.auth__button}>
-					Login
+					Увійти
 				</button>
 			</form>
 		</div>
 	);
 };
 
-export default auth;
+export default Login;
