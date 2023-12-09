@@ -1,5 +1,6 @@
 .dashboard {
 	padding: 1em 2em;
+	width: 100%;
 }
 
 .chart {
@@ -18,7 +19,7 @@
 }
 
 .csvBtn {
-	font-size: 1.4em;
+	font-size: 1.3em;
 	padding: 0.3em;
 	border-radius: 10px;
 	position: absolute;

@@ -11,14 +11,14 @@ import data from "../../data/mockData.json";
 
 const UsersDashboard = ({ filterParams }) => {
 	const columns = [
-		{ key: "id", label: "ID" },
-		{ key: "name", label: "Name" },
-		{ key: "sex", label: "Sex" },
-		{ key: "age", label: "Age" },
-		{ key: "location", label: "Location" },
-		{ key: "status", label: "Status" },
-		{ key: "messenger", label: "Messenger" },
-		{ key: "timestamp", label: "Timestamp" },
+		{ key: "id", label: "Мобільний номер" },
+		{ key: "name", label: "Ім'я користувача" },
+		{ key: "sex", label: "Стать" },
+		{ key: "age", label: "Вік" },
+		{ key: "location", label: "Місце проживання" },
+		{ key: "status", label: "Тип користувача" },
+		{ key: "messenger", label: "Месенджер" },
+		{ key: "timestamp", label: "Мітка часу" },
 	];
 
 	const filteredData = data.users.filter((user) => {
@@ -78,7 +78,7 @@ const UsersDashboard = ({ filterParams }) => {
 			</div>
 
 			<button className={styles.csvBtn} onClick={handleExportToCSV}>
-				Export to CSV
+				Експорт (CVS)
 			</button>
 		</section>
 	);

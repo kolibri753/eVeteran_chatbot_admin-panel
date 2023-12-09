@@ -17,18 +17,18 @@ const auth = () => {
 		if (username === "admin" && password === "admin") {
 			router.push("/dashboard");
 		} else {
-			window.alert("Wrong credentials!");
+			window.alert("Wrong credentials!\n-------TEMP:-------\nlogin=admin\npassword=admin\n------------------------");
 		}
 	};
 
 	return (
 		<div className={styles.auth}>
 			<Logo />
-			<h2 className={styles.auth__title}>Login</h2>
+			<h2 className={styles.auth__title}>Авторизація</h2>
 			<form className={styles.auth__form} onSubmit={handleLogin}>
 				<div className={styles.auth__inputGroup}>
 					<label htmlFor="username" className={styles.auth__label}>
-						Username:
+						Логін:
 					</label>
 					<input
 						type="text"
@@ -40,7 +40,7 @@ const auth = () => {
 				</div>
 				<div className={styles.auth__inputGroup}>
 					<label htmlFor="password" className={styles.auth__label}>
-						Password:
+						Пароль:
 					</label>
 					<input
 						type="password"

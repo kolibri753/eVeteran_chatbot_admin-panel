@@ -6,15 +6,16 @@ const Home = () => {
 	return (
 		<div className={styles.container}>
 			<Logo />
-			<h1 className={styles.title}>Welcome to e-Veteran Dashboard</h1>
+			<h1 className={styles.title}>
+				Вітаємо у адміністративній панелі для чат-бота "е-Ветеран"!
+			</h1>
 			<p className={styles.description}>
-				This is the homepage of the eVeteran Dashboard.
+				Тут ви матимете повний контроль над інтерфейсом та аналітикою. Слідкуйте за
+				активністю підписників, аналізуйте їх статуси та області звернень.
+				Переглядайте статистику груп користувачів та активність їхньої взаємодії.{" "}
 			</p>
 			<Link href="/login" className={styles.link}>
-				Go to Login Page
-			</Link>
-			<Link href="/dashboard" className={styles.link}>
-				Go to Dashboard
+				Перейти до Адміністративної Панелі
 			</Link>
 		</div>
 	);
