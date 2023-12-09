@@ -7,11 +7,12 @@ import DoughnutChart from "../doughnutChart/doughnutChart";
 import { exportToCSV } from "../../utils/exportUtils";
 import { isInSelectedPeriod } from "../../utils/dateUtils";
 import styles from "./usersDashboard.module.css";
+import LineChart from "../lineChart/lineChart";
 
 import data from "../../data/mockData.json";
 
 const UsersDashboard = ({ filterParams }) => {
-	const [selectedPeriod, setSelectedPeriod] = useState("7 days");
+	const [selectedPeriod, setSelectedPeriod] = useState("14 days");
 
 	const periodOptions = [
 		{ value: "7 days", label: "Last 7 days" },
@@ -76,7 +77,10 @@ const UsersDashboard = ({ filterParams }) => {
 				options={periodOptions}
 			/>
 			<Table columns={columns} data={filteredData} />
-			<DoughnutChart data={filteredData} />
+			<div className={styles.dashboard__charts}>
+				<DoughnutChart data={filteredData} />
+				<LineChart data={filteredData} />
+			</div>
 			<button className={styles.csvBtn} onClick={handleExportToCSV}>
 				Експорт (CVS)
 			</button>

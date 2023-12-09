@@ -1,6 +1,14 @@
 .dashboard {
-	padding: 1em 2em;
+	padding: 2em 2em;
 	width: 100%;
+}
+
+.dashboard__charts {
+	margin-top: 2em;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 2em;
 }
 
 .csvBtn {
